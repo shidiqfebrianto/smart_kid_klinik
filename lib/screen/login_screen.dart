@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:smart_kid_klinik/screen/home_screen.dart';
 
 import '../constant/image_constant.dart';
 import '../helpers/hex_color.dart';
@@ -48,19 +49,25 @@ class _LoginScreenState extends State<LoginScreen> {
                 obscureText: true,
               ),
               space(height: 56),
-              Container(
-                width: 286.w,
-                height: 54.h,
-                decoration: BoxDecoration(
-                    color: HexColor.fromHex('#022DA1'),
-                    borderRadius: BorderRadius.circular(20)),
-                child: const Center(
-                  child: Text(
-                    'LOGIN',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 24,
+              GestureDetector(
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const HomeScreen()),
+                ),
+                child: Container(
+                  width: 286.w,
+                  height: 54.h,
+                  decoration: BoxDecoration(
+                      color: HexColor.fromHex('#022DA1'),
+                      borderRadius: BorderRadius.circular(20)),
+                  child: const Center(
+                    child: Text(
+                      'LOGIN',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 24,
+                      ),
                     ),
                   ),
                 ),

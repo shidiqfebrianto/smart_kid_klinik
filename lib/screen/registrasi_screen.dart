@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../helpers/hex_color.dart';
 import '../helpers/space.dart';
+import 'login_screen.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({Key? key}) : super(key: key);
@@ -60,20 +61,45 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     label: Text('Phone'),
                   ),
                 ),
+                TextField(
+                  controller: usernameTEC,
+                  decoration: const InputDecoration(
+                    label: Text('Umur'),
+                  ),
+                ),
+                TextField(
+                  controller: usernameTEC,
+                  decoration: const InputDecoration(
+                    label: Text('Jenis Kelamin'),
+                  ),
+                ),
+                TextField(
+                  controller: usernameTEC,
+                  decoration: const InputDecoration(
+                    label: Text('Keluhan'),
+                  ),
+                ),
                 space(height: 56),
-                Container(
-                  width: 286.w,
-                  height: 54.h,
-                  decoration: BoxDecoration(
-                      color: HexColor.fromHex('#022DA1'),
-                      borderRadius: BorderRadius.circular(20)),
-                  child: const Center(
-                    child: Text(
-                      'CREATE',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 24,
+                GestureDetector(
+                  onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const LoginScreen()),
+                  ),
+                  child: Container(
+                    width: 286.w,
+                    height: 54.h,
+                    decoration: BoxDecoration(
+                        color: HexColor.fromHex('#022DA1'),
+                        borderRadius: BorderRadius.circular(20)),
+                    child: const Center(
+                      child: Text(
+                        'CREATE',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 24,
+                        ),
                       ),
                     ),
                   ),
