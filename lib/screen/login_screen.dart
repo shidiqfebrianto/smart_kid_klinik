@@ -21,74 +21,77 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Padding(
-        padding: EdgeInsets.all(16.w),
-        child: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              space(height: 100.h),
-              Image.asset(
-                ImageConstant.logo,
-                width: screenWidth(context) / 2,
-              ),
-              space(height: 70.h),
-              TextField(
-                controller: usernameTEC,
-                decoration: const InputDecoration(
-                  label: Text('Username'),
+    return WillPopScope(
+      onWillPop: () async => false,
+      child: Scaffold(
+        body: Padding(
+          padding: EdgeInsets.all(16.w),
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                space(height: 100.h),
+                Image.asset(
+                  ImageConstant.logo,
+                  width: screenWidth(context) / 2,
                 ),
-              ),
-              TextField(
-                controller: passwordTEC,
-                decoration: const InputDecoration(
-                  label: Text('Password'),
+                space(height: 70.h),
+                TextField(
+                  controller: usernameTEC,
+                  decoration: const InputDecoration(
+                    label: Text('Username'),
+                  ),
                 ),
-                obscureText: true,
-              ),
-              space(height: 56),
-              GestureDetector(
-                onTap: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const HomeScreen()),
+                TextField(
+                  controller: passwordTEC,
+                  decoration: const InputDecoration(
+                    label: Text('Password'),
+                  ),
+                  obscureText: true,
                 ),
-                child: Container(
-                  width: 286.w,
-                  height: 54.h,
-                  decoration: BoxDecoration(
-                      color: HexColor.fromHex('#022DA1'),
-                      borderRadius: BorderRadius.circular(20)),
-                  child: const Center(
-                    child: Text(
-                      'LOGIN',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 24,
+                space(height: 56),
+                GestureDetector(
+                  onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const HomeScreen()),
+                  ),
+                  child: Container(
+                    width: 286.w,
+                    height: 54.h,
+                    decoration: BoxDecoration(
+                        color: HexColor.fromHex('#022DA1'),
+                        borderRadius: BorderRadius.circular(20)),
+                    child: const Center(
+                      child: Text(
+                        'LOGIN',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 24,
+                        ),
                       ),
                     ),
                   ),
                 ),
-              ),
-              space(height: 56),
-              GestureDetector(
-                onTap: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const RegisterScreen()),
-                ),
-                child: const Text(
-                  'Dont have an account? Register',
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.w400,
-                    fontSize: 16,
+                space(height: 56),
+                GestureDetector(
+                  onTap: () => Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const RegisterScreen()),
+                  ),
+                  child: const Text(
+                    'Dont have an account? Register',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.w400,
+                      fontSize: 16,
+                    ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
