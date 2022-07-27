@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '../helpers/hex_color.dart';
 import '../helpers/space.dart';
-
-import '../constant/image_constant.dart';
-import '../helpers/ui_helpers.dart';
+import 'widgets/header_widget.dart';
 
 class DataPasienBaruScreen extends StatefulWidget {
   const DataPasienBaruScreen({Key? key}) : super(key: key);
@@ -21,49 +20,7 @@ class _DataPasienBaruScreenState extends State<DataPasienBaruScreen> {
       child: Scaffold(
         body: Column(
           children: [
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Image.asset(
-                  ImageConstant.logo,
-                  width: screenWidth(context) / 2,
-                ),
-                Container(
-                  height: 150.h,
-                  width: 150.h,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.only(
-                      // topLeft: Radius.circular(-63),
-                      bottomLeft: Radius.circular(150.h),
-                    ),
-                    color: HexColor.fromHex('#FF7128'),
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      const Text(
-                        'Admin,',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.w400,
-                          fontSize: 20,
-                        ),
-                      ),
-                      Text(
-                        '      Lia',
-                        style: TextStyle(
-                          color: HexColor.fromHex('#022DA1'),
-                          fontWeight: FontWeight.w800,
-                          fontSize: 32,
-                        ),
-                      ),
-                    ],
-                  ),
-                )
-              ],
-            ),
+            const HeaderWidget(),
             Expanded(
               child: GridView.count(
                 crossAxisCount: 2,
