@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:smart_kid_klinik/screen/login_screen.dart';
 
-import '../constant/image_constant.dart';
-import '../helpers/ui_helpers.dart';
+import 'login_screen.dart';
+import 'widgets/header_logo.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -15,7 +14,9 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
+    // setelah 2 detik
     Future.delayed(const Duration(seconds: 2), () {
+      // pindah ke halaman login
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (context) => const LoginScreen()),
@@ -30,13 +31,13 @@ class _SplashScreenState extends State<SplashScreen> {
       body: Padding(
         padding: EdgeInsets.all(16.w),
         child: Column(
+          // membuat list dengan column
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Image.asset(
-              ImageConstant.logo,
-              width: screenWidth(context) / 2,
-            ),
+            // menampilkan logo
+            const HeaderLogo(),
+            // menampilkan animasi loading
             Column(
               children: const [
                 CircularProgressIndicator(),

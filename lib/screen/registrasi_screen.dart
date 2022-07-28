@@ -27,6 +27,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
+                // menampilkan teks
                 Text(
                   'Register Pasien',
                   style: TextStyle(
@@ -35,19 +36,23 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     fontSize: 32,
                   ),
                 ),
+                // memberi jarak
                 space(height: 70.h),
+                // untuk membuat input nama peserta
                 TextField(
                   controller: usernameTEC,
                   decoration: const InputDecoration(
                     label: Text('Nama Peserta'),
                   ),
                 ),
+                // untuk membuat input username
                 TextField(
                   controller: usernameTEC,
                   decoration: const InputDecoration(
                     label: Text('Username'),
                   ),
                 ),
+                // untuk membuat input password
                 TextField(
                   controller: passwordTEC,
                   decoration: const InputDecoration(
@@ -55,32 +60,39 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   ),
                   obscureText: true,
                 ),
+                // untuk membuat input phone
                 TextField(
                   controller: usernameTEC,
                   decoration: const InputDecoration(
                     label: Text('Phone'),
                   ),
                 ),
+                // untuk membuat input umur
                 TextField(
                   controller: usernameTEC,
                   decoration: const InputDecoration(
                     label: Text('Umur'),
                   ),
                 ),
+                // untuk membuat input jenis kelamin
                 TextField(
                   controller: usernameTEC,
                   decoration: const InputDecoration(
                     label: Text('Jenis Kelamin'),
                   ),
                 ),
+                // untuk membuat input keluhan
                 TextField(
                   controller: usernameTEC,
                   decoration: const InputDecoration(
                     label: Text('Keluhan'),
                   ),
                 ),
+                // memberikan jarak
                 space(height: 56),
+                // membuat tombol
                 GestureDetector(
+                  // ketika di tap akan menuju halaman login
                   onTap: () => Navigator.push(
                     context,
                     MaterialPageRoute(

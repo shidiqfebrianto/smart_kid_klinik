@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:smart_kid_klinik/screen/home_screen.dart';
-import 'package:smart_kid_klinik/screen/widgets/header_logo.dart';
 
-import '../constant/image_constant.dart';
 import '../helpers/hex_color.dart';
 import '../helpers/space.dart';
-import '../helpers/ui_helpers.dart';
+import 'home_screen.dart';
 import 'registrasi_screen.dart';
+import 'widgets/header_logo.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -27,14 +25,18 @@ class _LoginScreenState extends State<LoginScreen> {
       child: Scaffold(
         body: Padding(
           padding: EdgeInsets.all(16.w),
+          // membuat layar bisa di scroll
           child: SingleChildScrollView(
+            // membuat list widget dengan column
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
+                // memberi jarak
                 space(height: 100.h),
                 // untuk menampilkan logo header halaman
                 const HeaderLogo(),
+                // memberi jarak
                 space(height: 70.h),
                 // untuk membuat input username
                 TextField(
@@ -49,8 +51,10 @@ class _LoginScreenState extends State<LoginScreen> {
                   decoration: const InputDecoration(
                     label: Text('Password'),
                   ),
+                  // supaya inputan tidak bisa dilihat
                   obscureText: true,
                 ),
+                // memberikan jarak
                 space(height: 56),
                 // membuat tombol Login
                 GestureDetector(
@@ -77,8 +81,11 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                 ),
+                // memberikan jarak
                 space(height: 56),
+                // membuat tombol
                 GestureDetector(
+                  // ketika di tap akan menuju halaman registrasi
                   onTap: () => Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
