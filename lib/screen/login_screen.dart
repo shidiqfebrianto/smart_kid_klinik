@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smart_kid_klinik/screen/home_screen.dart';
+import 'package:smart_kid_klinik/screen/widgets/header_logo.dart';
 
 import '../constant/image_constant.dart';
 import '../helpers/hex_color.dart';
@@ -32,17 +33,17 @@ class _LoginScreenState extends State<LoginScreen> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 space(height: 100.h),
-                Image.asset(
-                  ImageConstant.logo,
-                  width: screenWidth(context) / 2,
-                ),
+                // untuk menampilkan logo header halaman
+                const HeaderLogo(),
                 space(height: 70.h),
+                // untuk membuat input username
                 TextField(
                   controller: usernameTEC,
                   decoration: const InputDecoration(
                     label: Text('Username'),
                   ),
                 ),
+                // untuk membuat input password
                 TextField(
                   controller: passwordTEC,
                   decoration: const InputDecoration(
@@ -51,7 +52,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   obscureText: true,
                 ),
                 space(height: 56),
+                // membuat tombol Login
                 GestureDetector(
+                  // apabila di tap. akan menuju HomeScreen
                   onTap: () => Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => const HomeScreen()),

@@ -20,6 +20,7 @@ class _DataPasienBaruScreenState extends State<DataPasienBaruScreen> {
       child: Scaffold(
         body: Column(
           children: [
+            // untuk menampilkan header halaman
             const HeaderWidget(),
             Expanded(
               child: GridView.count(
