@@ -18,10 +18,12 @@ class _JadwalDokterScreenState extends State<JadwalDokterScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        // membuat list widget dengan column
         body: Column(
           children: [
             // untuk menampilkan header halaman
             const HeaderWidget(),
+            // menampilkan teks
             const Text(
               'Jadwal Dokter',
               style: TextStyle(
@@ -30,7 +32,9 @@ class _JadwalDokterScreenState extends State<JadwalDokterScreen> {
                 fontSize: 24,
               ),
             ),
+            // memberikan jarak
             space(height: 50.h),
+            // memberikan teks
             const Text(
               'Selasa dan Kamis',
               style: TextStyle(
@@ -39,6 +43,7 @@ class _JadwalDokterScreenState extends State<JadwalDokterScreen> {
                 fontSize: 20,
               ),
             ),
+            // membuat list widget secara horizontal atau kesamping
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
@@ -46,7 +51,9 @@ class _JadwalDokterScreenState extends State<JadwalDokterScreen> {
                 sesiWidget('Sesi 2', '13.00 - 15.00'),
               ],
             ),
+            // memberikan jarak
             space(height: 50.h),
+            // menampilkan teks
             const Text(
               'Sabtu',
               style: TextStyle(
@@ -55,6 +62,7 @@ class _JadwalDokterScreenState extends State<JadwalDokterScreen> {
                 fontSize: 20,
               ),
             ),
+            // membuat list widget secara horizontal atau kesamping
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [

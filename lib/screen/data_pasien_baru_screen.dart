@@ -23,9 +23,11 @@ class _DataPasienBaruScreenState extends State<DataPasienBaruScreen> {
             // untuk menampilkan header halaman
             const HeaderWidget(),
             Expanded(
+              // membuat grid
               child: GridView.count(
                 crossAxisCount: 2,
                 children: List.generate(listPasienBaru.length, (index) {
+                  // membuat list widget secara vertical atau kebawah
                   return Column(
                     children: [
                       Container(

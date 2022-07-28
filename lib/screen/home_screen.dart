@@ -21,11 +21,14 @@ class _HomeScreenState extends State<HomeScreen> {
       onWillPop: () async => false,
       child: SafeArea(
         child: Scaffold(
+          // membuat list widget secara vertical atau kebawah
           body: Column(
             children: [
               // untuk menampilkan header halaman
               const HeaderWidget(),
+              // membuat tobol
               GestureDetector(
+                // apabila di tap akan menuju halaman data pasien baru
                 onTap: () => Navigator.push(
                   context,
                   MaterialPageRoute(
@@ -38,15 +41,20 @@ class _HomeScreenState extends State<HomeScreen> {
                     borderRadius: BorderRadius.circular(103.h),
                     color: HexColor.fromHex('#FF7128'),
                   ),
+                  // menampilkan icon
                   child: Icon(
                     Icons.library_books_outlined,
                     size: 100.h,
                   ),
                 ),
               ),
+              // menampilkan teks
               const Text('Data Pasien Baru'),
+              // memberikan jarak
               space(height: 20.h),
+              // membuat tombol
               GestureDetector(
+                // apabila di tap akan menuju halaman jadwal dokter
                 onTap: () => Navigator.push(
                   context,
                   MaterialPageRoute(
@@ -65,7 +73,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
               ),
+              // menampilkan teks
               const Text('Jadwal Dokter'),
+              // memberikan jarak
               space(height: 20.h),
               Container(
                 height: 103.h,
